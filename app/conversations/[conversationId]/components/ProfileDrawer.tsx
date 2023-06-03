@@ -9,6 +9,7 @@ import { format } from "date-fns";
 import { Fragment, useMemo, useState } from "react";
 import { IoClose, IoTrash } from "react-icons/io5";
 import ConfirmModal from "./ConfirmModal";
+import AvatarGroup from "@/app/components/AvatarGroup";
 
 type Props = {
   data: Conversation & {
@@ -91,8 +92,7 @@ const ProfileDrawer = ({ data, isOpen, onClose }: Props) => {
                         <div className="flex flex-col items-center">
                           <div className="mb-2">
                             {data.isGroup ? (
-                              // <AvatarGroup users={data.users} />
-                              <span>es un grupo</span>
+                              <AvatarGroup users={data.users} />
                             ) : (
                               <Avatar user={otherUser} />
                             )}
@@ -137,9 +137,11 @@ const ProfileDrawer = ({ data, isOpen, onClose }: Props) => {
                               sm:col-span-2
                             "
                                   >
-                                    {data.users
-                                      .map((user) => user.email)
-                                      .join(", ")}
+                                    {data.users.map((user) => (
+                                      <li className="mb-2" key={user.id}>
+                                        {user.email}
+                                      </li>
+                                    ))}
                                   </dd>
                                 </div>
                               )}
