@@ -4,14 +4,14 @@ import { useCallback, useMemo } from "react";
 import { format } from "date-fns";
 
 import { Conversation, Message, User } from "@prisma/client";
-import { FullConversationType } from "../types";
+import { FullConversationType } from "../../types";
 
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import clsx from "clsx";
-import useOtherUser from "../hooks/useOtherUser";
+import useOtherUser from "../../hooks/useOtherUser";
 import Email from "next-auth/providers/email";
-import Avatar from "../components/Avatar";
+import Avatar from "../../components/Avatar";
 
 type Props = {
   data: FullConversationType;

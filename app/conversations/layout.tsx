@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../components/sidebar/Sidebar";
-import ConversationsList from "./ConversationsList";
+import ConversationsList from "./components/ConversationsList";
 import getConversations from "../actions/getConverstations";
 
 type Props = {

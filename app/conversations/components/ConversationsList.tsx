@@ -6,9 +6,9 @@ import { MdOutlineGroupAdd } from "react-icons/md";
 
 import { useRouter } from "next/navigation";
 
-import { FullConversationType } from "../types";
+import { FullConversationType } from "../../types";
 
-import useConversation from "../hooks/useConversation";
+import useConversation from "../../hooks/useConversation";
 import ConversationBox from "./ConversationBox";
 
 type Props = {
